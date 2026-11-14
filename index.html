@@ -10,6 +10,10 @@
       padding: 0;
       box-sizing: border-box;
     }
+    <script>
+  const version = "1.0.2";
+  document.getElementById("main-version").textContent = version;
+    </script>
 
     body {
       background: #f7f9fc;
@@ -130,11 +134,9 @@
         font-size: 1.6rem;
       }
     }
-
-    /* 可选的“根目录”小脚标，只是装饰，不影响功能 */
-    .footer-note {
+    .footer-note-f {
       position: fixed;
-      bottom: 12px;
+      bottom: 26px;
       right: 16px;
       font-size: 0.75rem;
       color: #94a3b8;
@@ -144,6 +146,30 @@
       backdrop-filter: blur(4px);
       pointer-events: none;
     }
+    .footer-note-s {
+      position: fixed;
+      bottom: 2px;
+      right: 16px;
+      font-size: 0.75rem;
+      color: #94a3b8;
+      background: rgba(255,255,255,0.6);
+      padding: 0.2rem 0.8rem;
+      border-radius: 100px;
+      backdrop-filter: blur(4px);
+      pointer-events: none;
+    }    
+    .footer-note-version {
+      position: fixed;
+      bottom: 2px;
+      left: 16px;
+      font-size: 0.75rem;
+      color: #94a3b8;
+      background: rgba(255,255,255,0.6);
+      padding: 0.2rem 0.8rem;
+      border-radius: 100px;
+      backdrop-filter: blur(4px);
+      pointer-events: none;
+    }    
 
     /* 确保卡片作为链接没有下划线 */
     a.card {
@@ -176,6 +202,8 @@
       <span class="hint">进入 gfeweb</span>
     </a>
   </div>
-  <div class="footer-note">mxsyjkm!</div>
+  <div class="footer-note-f">hi别来无恙啊!</div>
+  <div class="footer-note-s">欢迎你来mxsyjkm的网站</div>
+  <div class="footer-note-version">version:<span id="main-version"></span></dir>
 </body>
 </html>
