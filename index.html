@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>网站索引</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f7f9fc;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 1.5rem;
+    }
+    .index-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      max-width: 1000px;
+      width: 100%;
+    }
+    .card {
+      flex: 1 1 260px;          /* 基础宽度260，可灵活伸缩 */
+      max-width: 360px;
+      background: #ffffff;
+      border-radius: 2rem;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08),
+                  0 4px 8px rgba(0, 0, 0, 0.02);
+      transition: transform 0.2s ease, box-shadow 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1.5rem 2.2rem;
+      text-align: center;
+      text-decoration: none;    /* 链接样式重置 */
+      color: #1e293b;           /* 深灰蓝文字 */
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(2px);
+    }
+
+    /* 悬停效果：轻微上浮 + 加深阴影 */
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 40px rgba(0, 0, 0, 0.12),
+                  0 8px 16px rgba(0, 0, 0, 0.04);
+    }
+
+    /* 图标区域 – 统一尺寸和外观 */
+    .icon-wrapper {
+      width: 110px;
+      height: 110px;
+      border-radius: 30px;        /* 温和的圆角矩形 */
+      background: #f1f5f9;        /* 图标底色，避免透明svg看不清 */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      transition: background 0.2s;
+      padding: 12px;              /* 让图标有些内边距，不紧贴边缘 */
+      box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.02),
+                  0 6px 12px rgba(0, 0, 0, 0.02);
+    }
+
+    /* 图标图片通用设置 */
+    .icon-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;        /* 保持比例，不裁剪 */
+      display: block;
+    }
+
+    /* 对于 SVG 图标，我们也可以直接使用 img 标签引入，效果一致 */
+    /* 但如果直接用内联SVG会有不同，这里统一用 img */
+
+    /* 标题样式 */
+    .card h2 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+      color: #0f172a;
+    }
+
+    /* 描述文字 */
+    .card p {
+      font-size: 0.98rem;
+      color: #475569;
+      line-height: 1.5;
+      margin-bottom: 0.5rem;
+      max-width: 220px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* 可选的 “访问” 指示器（对无障碍友好，但不必须） */
+    .card .hint {
+      margin-top: 0.75rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: #3b82f6;          /* 友好的蓝色提示 */
+      opacity: 0.8;
+      transition: opacity 0.2s;
+    }
+
+    .card:hover .hint {
+      opacity: 1;
+    }
+
+    /* 移动端小调整 */
+    @media (max-width: 480px) {
+      .card {
+        padding: 1.6rem 1.2rem 1.8rem;
+      }
+      .icon-wrapper {
+        width: 90px;
+        height: 90px;
+      }
+      .card h2 {
+        font-size: 1.6rem;
+      }
+    }
+
+    /* 可选的“根目录”小脚标，只是装饰，不影响功能 */
+    .footer-note {
+      position: fixed;
+      bottom: 12px;
+      right: 16px;
+      font-size: 0.75rem;
+      color: #94a3b8;
+      background: rgba(255,255,255,0.6);
+      padding: 0.2rem 0.8rem;
+      border-radius: 100px;
+      backdrop-filter: blur(4px);
+      pointer-events: none;
+    }
+
+    /* 确保卡片作为链接没有下划线 */
+    a.card {
+      text-decoration: none;
+    }
+    a.card:focus-visible {
+      outline: 3px solid #3b82f6;
+      outline-offset: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="index-container">
+    <!-- 卡片1: aboutme -->
+    <a class="card" href="aboutme/">
+      <div class="icon-wrapper">
+        <img src="src/avatar.jpg" alt="About Me 头像图标" loading="lazy">
+      </div>
+      <h2>About Me</h2>
+      <p>个人简介 关于mxsyjkm</p>
+      <span class="hint">进入 aboutme</span>
+    </a>
+    <a class="card" href="gfeweb/">
+      <div class="icon-wrapper">
+        <img src="src/gfe.svg" alt="GFE Web 矢量图标" loading="lazy">
+      </div>
+      <h2>GFE Web</h2>
+      <p>gfeweb gjy文件编辑器网页版</p>
+      <span class="hint">进入 gfeweb</span>
+    </a>
+  </div>
+  <div class="footer-note">mxsyjkm!</div>
+</body>
+</html>
